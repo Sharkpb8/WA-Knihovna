@@ -18,8 +18,18 @@ body{
   justify-content: center;
 }
 .inner-container {
-    width: 60%;
-    background-color: white;
-    padding: 20px; /* Optional: add padding for inner spacing */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: add shadow for better visualization */
+  width: 60%;
+  background-color: white;
+  padding: 20px; /* Optional: add padding for inner spacing */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: add shadow for better visualization */
+}
+
+footer{
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
