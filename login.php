@@ -12,7 +12,7 @@ verifyUser($_POST["username"], $_POST["password"]);
 function verifyUser(string $username, string $password): void
 {
     $connection = DBC::getConnection();
-    $statement = $connection->prepare("SELECT id, username, password FROM uzivatel WHERE username = :username LIMIT 1");
+    $statement = $connection->prepare("SELECT id, username, password FROM users WHERE username = :username LIMIT 1");
     $statement->execute([":username" => $username]);
     $result = $statement->fetch(PDO::FETCH_ASSOC);
     if ($result && password_verify($password, $result["password"])) {

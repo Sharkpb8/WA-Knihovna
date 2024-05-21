@@ -24,10 +24,10 @@
                 echo  '<a class="nav-link active" aria-current="page" href="logout.php">Log out</a>';
                 echo '</li>';
                 echo '<li class="nav-item">';
-                echo '<a class="nav-link" href="data.php">Data</a>';
+                echo '<a class="nav-link" href="data.php">Katalog</a>';
                 echo ' </li>';
                 echo '<li class="nav-item">';
-                echo '<a class="nav-link" href="threads_page.php">Threads</a>';
+                echo '<a class="nav-link" href="threads_page.php">Moje půjčky</a>';
                 echo ' </li>';
               }else{
                 echo '<li class="nav-item">';
@@ -47,7 +47,19 @@
       </div> -->
       <div class="outer-container">
         <div class="inner-container">
-            <p>Your text goes here. This text block has a white background and occupies 60% of the width, with 20% space on either side.</p>
+            <h1>Knihovna U Zlaté Hvězdy</h1>
+            <p>Otevírací Doba</p>
+            <ul>
+              <li>Po-Pá: 9:00 - 20:00</li>
+              <li>So-Ne: 10:00 - 18:00</li>
+              <li>Svátky: 10:00 - 16:00</li>
+            </ul>
+            <p>Kontaktní údaje</p>
+            <ul>
+              <li>Telefon: +420 123 456 789</li>
+              <li>Email: info@knihovna-uzlatehvezdy.cz</li>
+              <li>Facebook: <a href="https://www.facebook.com/KnihovnaUZlateHvezdy">KnihovnaUZlateHvezdy</a></li>
+            </ul>
         </div>
     </div>
 </body>
