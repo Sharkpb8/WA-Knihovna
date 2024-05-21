@@ -45,6 +45,25 @@
       </nav>
       <div class="outer-container">
         <div class="inner-container">
+        <?php
+        require_once "./classes/DBC.php";
+
+        // Dotaz pro získání všech příspěvků
+        $query = DBC::getConnection()->query("SELECT * FROM allbooks;");
+        $books = $query->fetchAll();
+
+        // Vypsání příspěvků
+        foreach ($books as $b) {
+           echo '<div>';
+            echo '<p>Name:' . $b['bookname'] . '</p>';
+            echo '<p>Author name: ' . $b['authorname'] . '</p>';
+            echo '<p>Author surename: ' . $b['authorsurename'] . '</p>';
+            echo '<p>Genre: ' . $b['genrename'] . '</p>';
+            echo '<p>Release Date: ' . $b['release_date'] . '</p>';
+            echo '</div>';
+            echo '<br>';
+        }
+        ?>
 
         </div>
     </div>

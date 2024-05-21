@@ -43,11 +43,6 @@
           </div>
         </div>
       </nav>
-      <!-- <div class="textcenter">
-      <p>Vítejte na naší webové stránce!</p>
-      <p>Jsme váš průvodce do světa inspirace, objevování a zábavy.</p>
-      <p>Nechte se unést naší bohatou paletou obsahu, který osloví vaše smysly, povzbudí vaši kreativitu a posune vaše myšlenky na nové úrovně.</p>
-      </div> -->
       <div class="outer-container">
         <div class="inner-container">
             <h1>Městská knihovna Praha</h1>
