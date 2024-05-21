@@ -1,0 +1,25 @@
+body{
+  /* The image used */
+  background-image: url("img/background.jpg");
+  
+  /* Set a specific height */
+  min-height: 500px;
+  
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.outer-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.inner-container {
+    width: 60%;
+    background-color: white;
+    padding: 20px; /* Optional: add padding for inner spacing */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: add shadow for better visualization */
+}
