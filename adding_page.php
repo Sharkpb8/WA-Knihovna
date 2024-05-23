@@ -30,7 +30,7 @@
                 echo '<a class="nav-link " href="katalog_page.php" style="color:white">Katalog</a>';
                 echo ' </li>';
                 echo '<li class="nav-item">';
-                echo '<a class="nav-link" href="borrow_page.php" style="color:white">Moje půjčky</a>';
+                echo '<a class="nav-link" href="borrowed_page.php" style="color:white">Moje půjčky</a>';
                 echo ' </li>';
               }else{
                 echo '<li class="nav-item">';
@@ -51,7 +51,7 @@
         <div class="inner-container">
             <p>Form for new book</p>
             <form action="addbook.php" method="post">
-                <label for="Name">Bookname:</label>
+                <label for="Name">Book name:</label>
                 <input type="text" id="Name" name="Name"><br><br>
                 <label for="genre">Genre:</label>
                 <input type="text" id="genre" name="genre"><br><br>
@@ -61,6 +61,14 @@
                 <input type="text" id="authorsurename" name="authorsurename"><br><br>
                 <label for="releasedate">Release Date (yyyy-mm-dd):</label>
                 <input type="text" id="releasedate" name="releasedate"><br><br>
+                <input type="submit" value="Add">
+            </form>
+            <br>
+            <br>
+            <p>Form for new Genre</p>
+            <form action="addgenre.php" method="post">
+                <label for="Name">Genre name:</label>
+                <input type="text" id="Name" name="Name"><br><br>
                 <input type="submit" value="Add">
             </form>
         </div>

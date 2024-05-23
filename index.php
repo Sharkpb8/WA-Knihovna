@@ -39,7 +39,7 @@
               }
               if(isset($_SESSION["username"]) && $_SESSION["username"] === "admin"){
                 echo '<li class="nav-item">';
-                echo  '<a class="nav-link" aria-current="page" href="addbook_page.php" style="color:white">Add Book</a>';
+                echo  '<a class="nav-link" aria-current="page" href="adding_page.php" style="color:white">Add Book</a>';
                 echo '</li>';
               }
               ?>
