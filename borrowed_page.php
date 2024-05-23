@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Katalog</title>
     <link rel="icon" type="image/x-icon" href="/img/favicon.png">
     <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -18,7 +18,7 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 nav-underline ">
             <li class="nav-item">
-              <a class="nav-link active" href="#" style="color:white;">Home</a>
+              <a class="nav-link" href="index.php" style="color:white;">Home</a>
             </li>
             <?php
             session_start();
@@ -27,10 +27,10 @@
                 echo  '<a class="nav-link" aria-current="page" href="logout.php" style="color:white">Log out</a>';
                 echo '</li>';
                 echo '<li class="nav-item">';
-                echo '<a class="nav-link" href="katalog_page.php" style="color:white">Katalog</a>';
+                echo '<a class="nav-link " href="katalog_page.php" style="color:white">Katalog</a>';
                 echo ' </li>';
                 echo '<li class="nav-item">';
-                echo '<a class="nav-link" href="borrowed_page.php" style="color:white">Moje půjčky</a>';
+                echo '<a class="nav-link active" href="#" style="color:white">Moje půjčky</a>';
                 echo ' </li>';
               }else{
                 echo '<li class="nav-item">';
@@ -45,19 +45,23 @@
       </nav>
       <div class="outer-container">
         <div class="inner-container">
-            <h1>Městská knihovna Praha</h1>
-            <p>Otevírací Doba</p>
-            <ul>
-              <li>Po-Pá: 9:00 - 20:00</li>
-              <li>So-Ne: 10:00 - 18:00</li>
-              <li>Svátky: 10:00 - 16:00</li>
-            </ul>
-            <p>Kontaktní údaje</p>
-            <ul>
-              <li>Telefon: +420 123 456 789</li>
-              <li>Email: info@knihovna-uzlatehvezdy.cz</li>
-              <li>Facebook: <a href="https://www.facebook.com/KnihovnaUZlateHvezdy">KnihovnaUZlateHvezdy</a></li>
-            </ul>
+        <?php
+        require_once "./classes/DBC.php";
+        // Dotaz pro získání všech příspěvků
+        $query = DBC::getConnection()->query("call usersborrow('" . $_SESSION["username"] . "');");
+        $borrow = $query->fetchAll();
+
+        // Vypsání příspěvků
+        foreach ($borrow as $b) {
+           echo '<div>';
+            echo '<p>Book name:' . $b['name'] . '</p>';
+            echo '<p>Půjčeno od: ' . $b['datum_od'] . '</p>';
+            echo '<p>Půjčeno do: ' . $b['datum_do'] . '</p>';
+            echo '</div>';
+            echo '<br>';
+        }
+        ?>
+
         </div>
     </div>
     <footer>

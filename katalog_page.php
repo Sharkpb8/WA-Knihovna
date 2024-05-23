@@ -30,7 +30,7 @@
                 echo '<a class="nav-link active" href="#" style="color:white">Katalog</a>';
                 echo ' </li>';
                 echo '<li class="nav-item">';
-                echo '<a class="nav-link" href="threads_page.php" style="color:white">Moje půjčky</a>';
+                echo '<a class="nav-link" href="borrowed_page.php" style="color:white">Moje půjčky</a>';
                 echo ' </li>';
               }else{
                 echo '<li class="nav-item">';
