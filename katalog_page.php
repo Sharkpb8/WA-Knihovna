@@ -60,6 +60,10 @@
             echo '<p>Author surename: ' . $b['authorsurename'] . '</p>';
             echo '<p>Genre: ' . $b['genrename'] . '</p>';
             echo '<p>Release Date: ' . $b['release_date'] . '</p>';
+              echo '<form action="borrow.php" method="post">';
+              echo '<input type="hidden" name="bookname" value="' . $b['bookname'] . '">';
+              echo '<input type="submit" value="Borrow">';
+              echo '</form>';
             echo '</div>';
             echo '<br>';
         }
