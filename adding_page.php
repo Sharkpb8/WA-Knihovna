@@ -71,6 +71,16 @@
                 <input type="text" id="Name" name="Name"><br><br>
                 <input type="submit" value="Add">
             </form>
+            <br>
+            <br>
+            <p>Form for new Author</p>
+            <form action="addauthor.php" method="post">
+                <label for="authorname">Author name:</label>
+                <input type="text" id="authorname" name="authorname"><br><br>
+                <label for="authorsurename">Author surename:</label>
+                <input type="text" id="authorsurename" name="authorsurename"><br><br>
+                <input type="submit" value="Add">
+            </form>
         </div>
     </div>
     <footer>
