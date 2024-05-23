@@ -30,7 +30,7 @@
                 echo '<a class="nav-link " href="katalog_page.php" style="color:white">Katalog</a>';
                 echo ' </li>';
                 echo '<li class="nav-item">';
-                echo '<a class="nav-link active" href="#" style="color:white">Moje půjčky</a>';
+                echo '<a class="nav-link" href="borrow_page.php" style="color:white">Moje půjčky</a>';
                 echo ' </li>';
               }else{
                 echo '<li class="nav-item">';
@@ -39,7 +39,7 @@
               }
               if($_SESSION["username"] === "admin"){
                 echo '<li class="nav-item">';
-                echo  '<a class="nav-link" aria-current="page" href="addbook_page.php" style="color:white">Add Book</a>';
+                echo  '<a class="nav-link active" aria-current="page" href="#" style="color:white">Add Book</a>';
                 echo '</li>';
               }
               ?>
@@ -49,23 +49,20 @@
       </nav>
       <div class="outer-container">
         <div class="inner-container">
-        <?php
-        require_once "./classes/DBC.php";
-        // Dotaz pro získání všech příspěvků
-        $query = DBC::getConnection()->query("call usersborrow('" . $_SESSION["username"] . "');");
-        $borrow = $query->fetchAll();
-
-        // Vypsání příspěvků
-        foreach ($borrow as $b) {
-           echo '<div>';
-            echo '<p>Book name:' . $b['name'] . '</p>';
-            echo '<p>Půjčeno od: ' . $b['datum_od'] . '</p>';
-            echo '<p>Půjčeno do: ' . $b['datum_do'] . '</p>';
-            echo '</div>';
-            echo '<br>';
-        }
-        ?>
-
+            <p>Form for new book</p>
+            <form action="addbook.php" method="post">
+                <label for="Name">Bookname:</label>
+                <input type="text" id="Name" name="Name"><br><br>
+                <label for="genre">Genre:</label>
+                <input type="text" id="genre" name="genre"><br><br>
+                <label for="authorname">Author name:</label>
+                <input type="text" id="authorname" name="authorname"><br><br>
+                <label for="authorsurename">Author surename:</label>
+                <input type="text" id="authorsurename" name="authorsurename"><br><br>
+                <label for="releasedate">Release Date (yyyy-mm-dd):</label>
+                <input type="text" id="releasedate" name="releasedate"><br><br>
+                <input type="submit" value="Add">
+            </form>
         </div>
     </div>
     <footer>

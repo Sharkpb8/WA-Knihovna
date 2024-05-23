@@ -36,7 +36,11 @@
                 echo '<li class="nav-item">';
                 echo  '<a class="nav-link" aria-current="page" href="login_page.php" style="color:white">Login</a>';
                 echo '</li>';
-
+              }
+              if(isset($_SESSION["username"]) && $_SESSION["username"] === "admin"){
+                echo '<li class="nav-item">';
+                echo  '<a class="nav-link" aria-current="page" href="addbook_page.php" style="color:white">Add Book</a>';
+                echo '</li>';
               }
               ?>
             </ul>
