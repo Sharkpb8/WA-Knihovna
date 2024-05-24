@@ -31,9 +31,9 @@ function verifyUser(string $username, string $password): void
         if($_SESSION["atempts"] >= 3)
         {
 	        error_log( '' . date('Y-m-d H:i:s') . ' - Login attempt on user: ' . $_POST["username"] . PHP_EOL, 3, "./log.txt");
+            $_SESSION["atempts"] = 0;
         }
         header("Location: login_page.php");
     }
 }
-/* $_SESSION["atempts"] = 0; */
 ?>
