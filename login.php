@@ -2,6 +2,10 @@
 require_once "./classes/User.php";
 require_once "./classes/DBC.php";
 session_start();
+if (empty($_SESSION["atempts"]))
+{
+    $_SESSION["atempts"] = 0;
+}
 if(empty($_POST["username"]) || empty($_POST["password"])){
     header('Location: index.php');
     exit();
@@ -18,15 +22,18 @@ function verifyUser(string $username, string $password): void
     if ($result && password_verify($password, $result["password"])) {
         $_SESSION["user_id"] = $result["id"];
         $_SESSION["user_name"] = $result["username"];
-        header("Location: /");
+        $username = $_POST["username"];
+        $_SESSION['username'] = $username;
+        $_SESSION["loggedin"] = true;
+        header('Location: katalog_page.php');
     } else {
-        header("Location: /login");
+        $_SESSION["atempts"] = $_SESSION["atempts"] +1;
+        if($_SESSION["atempts"] == 3)
+        {
+            echo 'asdasdasd';
+        }
+        header("Location: login_page.php");
     }
 }
 
-
-$username = $_POST["username"];
-$_SESSION['username'] = $username;
-$_SESSION["loggedin"] = true;
-header('Location: data.php');
 ?>
