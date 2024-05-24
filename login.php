@@ -28,12 +28,12 @@ function verifyUser(string $username, string $password): void
         header('Location: katalog_page.php');
     } else {
         $_SESSION["atempts"] = $_SESSION["atempts"] +1;
-        if($_SESSION["atempts"] == 3)
+        if($_SESSION["atempts"] >= 3)
         {
-            echo 'asdasdasd';
+	        error_log( '' . date('Y-m-d H:i:s') . ' - Login attempt on user: ' . $_POST["username"] . PHP_EOL, 3, "./log.txt");
         }
         header("Location: login_page.php");
     }
 }
-
+/* $_SESSION["atempts"] = 0; */
 ?>
