@@ -20,29 +20,23 @@
             <li class="nav-item">
               <a class="nav-link" href="index.php" style="color:white;">Home</a>
             </li>
-            <?php
-            session_start();
-              if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-                echo '<li class="nav-item">';
-                echo  '<a class="nav-link" aria-current="page" href="logout.php" style="color:white">Log out</a>';
-                echo '</li>';
-                echo '<li class="nav-item">';
-                echo '<a class="nav-link " href="katalog_page.php" style="color:white">Katalog</a>';
-                echo ' </li>';
-                echo '<li class="nav-item">';
-                echo '<a class="nav-link active" href="#" style="color:white">Moje půjčky</a>';
-                echo ' </li>';
-              }else{
-                echo '<li class="nav-item">';
-                echo  '<a class="nav-link" aria-current="page" href="login_page.php" style="color:white">Login</a>';
-                echo '</li>';
-              }
-              if($_SESSION["username"] === "admin"){
-                echo '<li class="nav-item">';
-                echo  '<a class="nav-link" aria-current="page" href="adding_page.php" style="color:white">Add Book</a>';
-                echo '</li>';
-              }
-              ?>
+                <li class="nav-item">
+                <a class="nav-link " href="katalog_page.php" style="color:white">Katalog</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link active" href="#" style="color:white">Moje půjčky</a>
+                </li>
+                <?php
+                session_start();
+                if($_SESSION["username"] === "admin"){
+                  echo '<li class="nav-item">';
+                  echo  '<a class="nav-link" aria-current="page" href="adding_page.php" style="color:white">Add Book</a>';
+                  echo '</li>';
+                }
+                ?>
+                <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="logout.php" style="color:white">Log out</a>
+                </li>
             </ul>
           </div>
         </div>

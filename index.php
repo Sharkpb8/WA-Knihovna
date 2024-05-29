@@ -24,22 +24,22 @@
             session_start();
               if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
                 echo '<li class="nav-item">';
-                echo  '<a class="nav-link" aria-current="page" href="logout.php" style="color:white">Log out</a>';
-                echo '</li>';
-                echo '<li class="nav-item">';
                 echo '<a class="nav-link" href="katalog_page.php" style="color:white">Katalog</a>';
                 echo ' </li>';
                 echo '<li class="nav-item">';
                 echo '<a class="nav-link" href="borrowed_page.php" style="color:white">Moje půjčky</a>';
                 echo ' </li>';
+                if(isset($_SESSION["username"]) && $_SESSION["username"] === "admin"){
+                  echo '<li class="nav-item">';
+                  echo  '<a class="nav-link" aria-current="page" href="adding_page.php" style="color:white">Add Book</a>';
+                  echo '</li>';
+                }
+                echo '<li class="nav-item">';
+                echo  '<a class="nav-link" aria-current="page" href="logout.php" style="color:white">Log out</a>';
+                echo '</li>';
               }else{
                 echo '<li class="nav-item">';
                 echo  '<a class="nav-link" aria-current="page" href="login_page.php" style="color:white">Login</a>';
-                echo '</li>';
-              }
-              if(isset($_SESSION["username"]) && $_SESSION["username"] === "admin"){
-                echo '<li class="nav-item">';
-                echo  '<a class="nav-link" aria-current="page" href="adding_page.php" style="color:white">Add Book</a>';
                 echo '</li>';
               }
               ?>
