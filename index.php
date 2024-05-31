@@ -45,6 +45,7 @@
               ?>
             </ul>
           </div>
+          <a class="navbar-brand" href="#" style="color:white;"><img src="/img/favicon.png" alt="Logo" width="30" height="30" class="d-inline-block align-text-top"> Městská knihovna Praha</a>
         </div>
       </nav>
       <div class="outer-container">
