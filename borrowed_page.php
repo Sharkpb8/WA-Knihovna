@@ -1,3 +1,9 @@
+<?php
+session_start();
+if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] === false){
+  header('Location: index.php');
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,7 +33,6 @@
                 <a class="nav-link active" href="#" style="color:white">Moje půjčky</a>
                 </li>
                 <?php
-                session_start();
                 if($_SESSION["username"] === "admin"){
                   echo '<li class="nav-item">';
                   echo  '<a class="nav-link" aria-current="page" href="adding_page.php" style="color:white">Add Book</a>';
