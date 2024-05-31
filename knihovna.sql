@@ -70,17 +70,19 @@ declare user_id int;
 declare book_id int;
 select id into user_id from users where username = _username;
 select id into book_id from book where name = _bookname;
-insert into borrow(users_id,book_id,datum_od,datum_do) values(user_id,book_id,CURDATE(),CURDATE()+100);
+insert into borrow(users_id,book_id,datum_od,datum_do) values(user_id,book_id,CURDATE(),DATE_ADD(CURDATE(), INTERVAL 1 MONTH));
 end //
 delimiter ;
 
 delimiter //
 create procedure usersborrow(_username varchar(50))
 begin
+declare user_id int;
+select id into user_id from users where username = _username;
 select  bo.name,br.datum_od,br.datum_do
 from borrow as br inner join users as u on br.users_id = u.id
 			      inner join book as bo on br.book_id = bo.id
-where u.username = _username and br.datum_do>CURDATE();
+where u.id = user_id and br.datum_do>CURDATE();
 end //
 delimiter ;
 
