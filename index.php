@@ -59,8 +59,8 @@
             <p>Kontaktní údaje</p>
             <ul>
               <li>Telefon: +420 123 456 789</li>
-              <li>Email: info@knihovna-uzlatehvezdy.cz</li>
-              <li>Facebook: <a href="https://www.facebook.com/KnihovnaUZlateHvezdy">KnihovnaUZlateHvezdy</a></li>
+              <li>Email: info@mestskaknihovnapraha.cz</li>
+              <li>Facebook: <a href="https://www.facebook.com/Městská_knihovna_Praha">Městská knihovna Praha</a></li>
             </ul>
         </div>
     </div>
